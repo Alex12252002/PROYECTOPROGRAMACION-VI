@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthFirebase.Views.EditVehiculoPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Placa" />
+        <Entry Text="{Binding Placa}" />
+
+        <Label Text="Marca" />
+        <Entry Text="{Binding Marca}" />
+
+        <Label Text="Modelo" />
+        <Entry Text="{Binding Modelo}" />
+
+        <Label Text="Año" />
+        <Entry Text="{Binding Anio}" Keyboard="Numeric" />
+
+        
+
+        <Button Text="Guardar" Clicked="OnSaveClicked" />
+    </StackLayout>
+</ContentPage>

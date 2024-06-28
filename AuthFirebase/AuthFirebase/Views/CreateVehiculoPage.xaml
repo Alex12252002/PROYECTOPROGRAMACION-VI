@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AuthFirebase.Models"
+             x:Class="AuthFirebase.Views.CreateVehiculoPage">
+
+    <ContentPage.BindingContext>
+        <local:Vehiculo />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10" BackgroundColor="#f2f2f2">
+            <Label Text="Añadir Vehículo" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Entry Text="{Binding Placa}" Placeholder="Placa"/>
+            <Entry Text="{Binding Marca}" Placeholder="Marca"/>
+            <Entry Text="{Binding Modelo}" Placeholder="Modelo"/>
+            <Entry Text="{Binding Anio}" Placeholder="Año" Keyboard="Numeric"/>
+
+            <!-- Botón de guardar -->
+            <Button Text="Guardar" BackgroundColor="Green" TextColor="White" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

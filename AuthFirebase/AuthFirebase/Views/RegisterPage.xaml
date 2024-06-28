@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthFirebase.Views.RegisterPage"
+             BackgroundColor="#FFFFFF">
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Título -->
+            <Label Text="Registro" FontSize="24" FontAttributes="Bold"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   TextColor="#333333" Margin="0,20,0,10" Grid.Row="0"/>
+
+            <!-- Formulario -->
+            <Frame Grid.Row="1" BackgroundColor="#f0f0f0" CornerRadius="10" Padding="20" Margin="40">
+                <StackLayout Spacing="15">
+                    <Entry Placeholder="Correo electrónico" x:Name="newemail" Keyboard="Email"
+                           PlaceholderColor="#7f7f7f" BackgroundColor="#ededed" HeightRequest="50"
+                           TextColor="#333333" FontSize="16" HorizontalOptions="FillAndExpand"
+                           VerticalOptions="Center" Margin="0,5,0,0" 
+                           ReturnType="Next" />
+
+                    <Entry Placeholder="Contraseña" x:Name="newpassword" IsPassword="True"
+                           PlaceholderColor="#7f7f7f" BackgroundColor="#ededed" HeightRequest="50"
+                           TextColor="#333333" FontSize="16" HorizontalOptions="FillAndExpand"
+                           VerticalOptions="Center" Margin="0,5,0,0" 
+                           ReturnType="Go" />
+
+                    <Button x:Name="btnRegister" Text="Registrar" Clicked="btnRegister_Clicked"
+                            BackgroundColor="#2196F3" TextColor="White" CornerRadius="8"
+                            HeightRequest="50" VerticalOptions="CenterAndExpand" />
+
+                    <Button x:Name="btnLogin" Text="Iniciar sesión" Clicked="btnLogin_Clicked"
+         BackgroundColor="#4CAF50" TextColor="White" CornerRadius="8"
+         HeightRequest="50" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

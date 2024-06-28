@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="AuthFirebase.Views.CreateClientePage"
+             xmlns:local="clr-namespace:AuthFirebase.Models">
+
+    <ContentPage.BindingContext>
+        <local:Clientes />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10" BackgroundColor="#f2f2f2">
+            <Label Text="Añadir Cliente" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Entry Text="{Binding Cedula}" Placeholder="Cédula"/>
+            <Entry Text="{Binding Nombres}" Placeholder="Nombres"/>
+            <Entry Text="{Binding Apellidos}" Placeholder="Apellidos"/>
+            <Entry Text="{Binding Telefono}" Placeholder="Teléfono" Keyboard="Telephone"/>
+
+            <!-- Campos de ubicación -->
+            <Label Text="Ubicación" FontSize="20" FontAttributes="Bold"/>
+            <Entry x:Name="latitudEntry" Text="{Binding Ubicacion.Latitud}" Placeholder="Latitud" Keyboard="Numeric"/>
+            <Entry x:Name="longitudEntry" Text="{Binding Ubicacion.Longitud}" Placeholder="Longitud" Keyboard="Numeric"/>
+
+            <!-- Mapa -->
+            <maps:Map x:Name="map"
+                      VerticalOptions="FillAndExpand"
+                      IsShowingUser="true"
+                      MapType="Street">
+                <maps:Map.Pins>
+                    <maps:Pin Position="{Binding Ubicacion.Latitud, Ubicacion.Longitud}"
+                              Label="Ubicación"
+                              Address="Cliente"/>
+                </maps:Map.Pins>
+            </maps:Map>
+
+            <!-- Botón de guardar -->
+            <Button Text="Guardar" BackgroundColor="Green" TextColor="White" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

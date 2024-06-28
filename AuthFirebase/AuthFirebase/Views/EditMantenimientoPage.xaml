@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthFirebase.Views.EditMantenimientoPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Editar Tarea de Mantenimiento" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10"/>
+
+            <Entry Placeholder="ID de Mantenimiento" Text="{Binding idMantenimiento}" IsEnabled="False" Margin="0,0,0,10"/>
+            <Entry Placeholder="Tareas" Text="{Binding tareas}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Kilometraje" Keyboard="Numeric" Text="{Binding Kilometraje}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Repuesto" Text="{Binding Repuesto}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Observación" Text="{Binding Observacion}" Margin="0,0,0,10"/>
+
+
+            <Button Text="Guardar" Clicked="OnSaveClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

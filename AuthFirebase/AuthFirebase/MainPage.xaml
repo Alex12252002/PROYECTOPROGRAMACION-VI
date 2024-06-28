@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthFirebase.MainPage">
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Bienvenido Label -->
+            <Label Text="Bienvenido" FontSize="32" FontAttributes="Bold"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   TextColor="Black" Grid.Row="0"/>
+
+            
+
+            <!-- Iniciar Sesión Button -->
+            <Button Grid.Row="2" Text="Iniciar Sesión" Clicked="btnLogin_Clicked"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                    BackgroundColor="#1976D2" TextColor="White" CornerRadius="8"
+                    Margin="20,0,20,10"/>
+
+            <!-- Registrarse Button -->
+            <Button Grid.Row="3" Text="Registrarse" Clicked="btnRegister_Clicked"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                    BackgroundColor="#4CAF50" TextColor="White" CornerRadius="8"
+                    Margin="20,0,20,20"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

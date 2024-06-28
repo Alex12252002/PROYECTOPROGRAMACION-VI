@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthFirebase.Views.APIrest">
+
+  
+    <ContentPage.Content>
+        <StackLayout Padding="10" BackgroundColor="#f2f2f2">
+            <!-- Botón Añadir Cliente -->
+            <Button Text="Añadir Cliente" BackgroundColor="LightBlue" TextColor="White" Clicked="Button_Clicked" />
+
+            <!-- ListView para mostrar clientes -->
+            <ListView x:Name="MyListView"  HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="10,5" Padding="10" CornerRadius="10" BackgroundColor="White" BorderColor="#cccccc">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <!-- Añadir más filas según sea necesario -->
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Información del cliente -->
+                                    <StackLayout Grid.Row="0" Grid.ColumnSpan="2">
+                                        <Label Text="{Binding Nombres}" FontAttributes="Bold" FontSize="20" TextColor="Gray"/>
+                                        <Label Text="{Binding Apellidos}" FontSize="16" TextColor="Gray"/>
+                                        <Label Text="{Binding Cedula}" FontSize="16" TextColor="Gray"/>
+                                        <Label Text="{Binding Telefono}" FontSize="16" TextColor="Gray"/>
+                                        <!-- Añadir más etiquetas según los campos necesarios -->
+                                        <Label Text="Ubicación" FontSize="20" FontAttributes="Bold"/>
+                                        <Entry Text="{Binding Ubicacion.Latitud}" Placeholder="Latitud" Keyboard="Numeric"/>
+                                        <Entry Text="{Binding Ubicacion.Longitud}" Placeholder="Longitud" Keyboard="Numeric"/>
+                                        <Entry Text="{Binding Ubicacion.Timestamp}" Placeholder="Timestamp"/>
+                                    </StackLayout>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding Id}" FontSize="14" TextColor="Red"/>
+                                    <!-- Botones de acción -->
+                                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+                                        <Button Text="Editar" BackgroundColor="#2196F3" TextColor="Black" Command="{Binding BindingContext.EditCommand, Source={x:Reference MyListView}}" CommandParameter="{Binding .}" WidthRequest="80"/>
+                                        <Button Text="Eliminar" BackgroundColor="#F44336" TextColor="Black" Command="{Binding BindingContext.DeleteCommand, Source={x:Reference MyListView}}" CommandParameter="{Binding .}" Margin="5,0,0,0" WidthRequest="90"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

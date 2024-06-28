@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthFirebase.Views.EditClientePage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Agregar y Editar Cliente" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Entry Text="{Binding Cedula}" Placeholder="Cédula"/>
+            <Entry Text="{Binding Nombres}" Placeholder="Nombres"/>
+            <Entry Text="{Binding Apellidos}" Placeholder="Apellidos"/>
+            <Entry Text="{Binding Telefono}" Placeholder="Teléfono"/>
+
+            <!-- Ubicación -->
+            <StackLayout>
+                <Label Text="Ubicación" FontSize="20" FontAttributes="Bold"/>
+                <Entry Text="{Binding Ubicacion.Latitud}" Placeholder="Latitud"/>
+                <Entry Text="{Binding Ubicacion.Longitud}" Placeholder="Longitud"/>
+                <!-- Timestamp podría ser solo informativo, ya que no se edita directamente -->
+                <Label Text="{Binding Ubicacion.Timestamp, StringFormat='Timestamp: {0}'}" FontSize="16" TextColor="Gray"/>
+            </StackLayout>
+
+            <Button Text="Guardar" Clicked="OnSaveClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
